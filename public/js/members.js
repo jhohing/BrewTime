@@ -7,9 +7,9 @@ $(document).ready(function() {
 
   function getLocation() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
+      navigator.geolocation.getCurrentPosition(data)
     } else {
-      x.innerHTML = "Geolocation is not supported by this browser.";
+      innerHTML = "Geolocation is not supported by this browser.";
     }
   }
 });
