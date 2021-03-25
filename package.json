@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "_from": "dotenv",
   "_id": "dotenv@8.2.0",
   "_inBundle": false,
@@ -78,37 +77,4 @@
   },
   "types": "types",
   "version": "8.2.0"
-=======
-  "name": "BrewTime",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jhohing/BrewTime.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.21.1",
-    "bcryptjs": "2.4.3",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.0",
-    "express-session": "^1.16.1",
-    "mysql2": "^1.6.5",
-    "passport": "^0.4.0",
-    "passport-local": "^1.0.0",
-    "sequelize": "^5.8.6"
-  },
-  "bugs": {
-    "url": "https://github.com/jhohing/BrewTime/issues"
-  },
-  "homepage": "https://github.com/jhohing/BrewTime#readme"
->>>>>>> 999851d93ce886a5898cc2102cce85a9b567d913
 }
