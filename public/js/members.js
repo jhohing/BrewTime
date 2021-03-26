@@ -9,16 +9,22 @@ $(document).ready(function () {
 
   function getlocation() { 
     if (window.navigator.geolocation) {
-      (window.navigator.geolocation.getCurrentPosition(locationData =>
-        console.log(locationData)));
-      
-      
-      
+      // (window.navigator.geolocation.getCurrentPosition(locationData =>
+      //   console.log(locationData.coords.latitude)));
+      window.navigator.geolocation.getCurrentPosition(showPosition);
+    
+       
+    
     }
     else {
-      x.innerHTML = "Geolocation is not supported by this browser.";
+    innerHTML = "Geolocation is not supported by this browser.";
     }
   }
+  function showPosition(position) {
+    let long = position.coords.longitude; 
+    let lat = position.coords.latitude; 
+  }
+  
 });
 
 
