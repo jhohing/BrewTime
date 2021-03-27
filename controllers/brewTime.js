@@ -5,36 +5,76 @@ var router = express.Router();
 const brewTime = require("../models/brewTime.js");
 
 //router.get
-router.get("/", function(req, res) {
-    brewTime.all(function(data) {
-      var hbsObject = {
-        brewTime: data
-      };
-      console.log(hbsObject);
-      res.render("index", hbsObject);
+router.get("/", function (req, res) {
+    brewTime.all(function (data) {
+        var hbsObject = {
+            brewTime: data
+        };
+        console.log(hbsObject);
+        res.render("index", hbsObject);
     });
-  });
+});
+//get the about.handlebars
+router.get("/about", function (req, res) {
+    brewTime.all(function (data) {
+        var hbsObject = {
+            brewTime: data
+        };
+        console.log(hbsObject);
+        res.render("about", hbsObject);
+    });
+});
+//get the history.handlebars
+router.get("/history", function (req, res) {
+    brewTime.all(function (data) {
+        var hbsObject = {
+            brewTime: data
+        };
+        console.log(hbsObject);
+        res.render("history", hbsObject);
+    });
+});
+//get the login.handlebars
+router.get("/login", function (req, res) {
+    brewTime.all(function (data) {
+        var hbsObject = {
+            brewTime: data
+        };
+        console.log(hbsObject);
+        res.render("login", hbsObject);
+    });
+});
+//get the maps.handlebars
+router.get("/maps", function (req, res) {
+    brewTime.all(function (data) {
+        var hbsObject = {
+            brewTime: data
+        };
+        console.log(hbsObject);
+        res.render("maps", hbsObject);
+    });
+});
 
 //router.post
-router.post("/api/brewTime", function(req, res) {
+router.post("/api/brewTime", function (req, res) {
     brewTime.create([
         //
     ], [
         req.body.burger_name, req.body.devoured
-    ], function(result) {
+    ], function (result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });
     });
 });
 //router.put
-router.put("/api/brewTime/:id", function(req, res) {
+router.put("/api/brewTime/:id", function (req, res) {
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);
 
     hamburger.update({
         devoured: req.body.devoured
-    }, condition, function(result) {
+    }, condition, function (result) {
         if (result.changedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
             return res.status(404).end();
@@ -44,10 +84,10 @@ router.put("/api/brewTime/:id", function(req, res) {
     });
 });
 //router.delete
-router.delete("/api/brewTime/:id", function(req, res) {
+router.delete("/api/brewTime/:id", function (req, res) {
     var condition = "id = " + req.params.id;
 
-    hamburger.delete(condition, function(result) {
+    hamburger.delete(condition, function (result) {
         if (result.affectedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
             return res.status(404).end();
