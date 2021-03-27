@@ -1,13 +1,10 @@
-
 $(document).ready(function () {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get("/api/user_data").then(function (data) {
     $(".member-name").text(data.email);
-  });
-  
-  getlocation()
 
+<<<<<<< HEAD
   function getlocation() { 
     if (window.navigator.geolocation) {
       // (window.navigator.geolocation.getCurrentPosition(locationData =>
@@ -26,5 +23,17 @@ $(document).ready(function () {
     let lat = position.coords.latitude; 
   }
   
+=======
+    getlocation()
+    function getlocation() {
+      if (window.navigator.geolocation) {
+        (window.navigator.geolocation.getCurrentPosition(locationData =>
+          console.log(locationData)));
+      }
+      else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+  });
+>>>>>>> dce4948034488bde933d96e6e2e18f702e93a20e
 });
-
