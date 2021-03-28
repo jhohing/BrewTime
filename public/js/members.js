@@ -10,10 +10,10 @@ $(document).ready(function () {
       if (window.navigator.geolocation) {
         (window.navigator.geolocation.getCurrentPosition(locationData => {
            // console.log(locationData)));
-          //  let currentLong = locationData.coords.longitude;
-          //  let currentLat = locationData.coords.latitude;
-          let currentLat = 40.717499;
-          let currentLong = -74.044113;
+           let currentLat = locationData.coords.latitude;
+           let currentLong = locationData.coords.longitude;
+          // let currentLat = 40.717499;
+          // let currentLong = -74.044113;
 
            initMap(currentLat, currentLong)
            renderSearches(currentLat, currentLong)
@@ -50,6 +50,9 @@ async function renderSearches(lon,lat) {
   .catch(err => console.error(err)); 
   request.results.map(function(item, index) {
     console.log(index, item.name);
+    $(".results").text(item, index.name);
+  
+    
 })
 
 
