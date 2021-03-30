@@ -56,7 +56,7 @@ async function renderSearches(lon,lat) {
     const marker = new google.maps.Marker({
       position: {lat: item.geometry.location.lat, lng: item.geometry.location.lng}, 
       label: `${index}`, 
-      zIndex: 1
+      // zIndex: 1
     
     })
     marker.setMap(map)
