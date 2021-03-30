@@ -40,4 +40,14 @@ img{
   from{border-right-color: rgba(255,255,255,.75);}
   to{border-right-color: transparent;}
 }
+/* tabs */
+.nav-link{
+    color:brown;
+    font-size: 25px;
+}
+/* about page */
+.card{
+    margin:auto;
+    width: 18rem;
+}
 
