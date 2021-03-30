@@ -48,7 +48,8 @@ async function renderSearches(lon,lat) {
   })
   .then(data => data.json())
   .catch(err => console.error(err)); 
-  console.log(request);
+  // console.log(request);
+  console.log(request.results[0].place_id);
   request.results.map(function(item, index) {
     // console.log(index, item.name);
     $(".results").append(`<p> ${index}: ${item.name} Open: ${item.opening_hours.open_now === true ? "Yes" : "No"} </p>`);
@@ -62,6 +63,8 @@ async function renderSearches(lon,lat) {
     marker.setMap(map)
 
 })
+
+
 
 };
 

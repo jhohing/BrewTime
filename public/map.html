@@ -58,14 +58,31 @@
   
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpP9c6UVQA5-hoA1VcR953lZwAsGfUUFg&callback=initMap&libraries=&v=weekly"
+      src=src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpP9c6UVQA5-hoA1VcR953lZwAsGfUUFg&callback=initAutocomplete&libraries=places&v=weekly"
       async
     ></script>
 
 <!-- The form -->
-<form class="example" action="action_page.php">
-  <input type="text" placeholder="Search.." name="search">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
+<head>
+    <title>Places Search Box</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./map.js"></script>
+  </head>
+  <body>
+    <input
+      id="pac-input"
+      class="controls"
+      type="text"
+      placeholder="Search Box"
+    />
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initAutocomplete&libraries=places&v=weekly"
+      async
+    ></script>
+  </body>
 
 </body>

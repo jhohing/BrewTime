@@ -1,7 +1,7 @@
 let map, infoWindow;
 function initMap(lat, long) {
     map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: lat, lng: long },
+        // center: { lat: lat, lng: long },
         zoom: 14,
     });
     infoWindow = new google.maps.InfoWindow();
@@ -9,8 +9,8 @@ function initMap(lat, long) {
 
 async function renderSearches(lon, lat) {
     var apiKey = "AIzaSyBpP9c6UVQA5-hoA1VcR953lZwAsGfUUFg";
-    var url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lon},${lat}&radius=3000&keyword=cafe&type=cafe&key=${apiKey}`;
-    const request = await fetch(url, {
+    var searchurl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=&radius=3000&keyword=cafe&type=cafe&key=${apiKey}`;
+    const request = await fetch(searchurl, {
         method: 'GET',
         mode: 'cors',
         headers: {
