@@ -31,7 +31,7 @@ $(document).ready(function () {
 function initMap(lat, long) {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: lat, lng: long },
-    zoom: 12,
+    zoom: 14,
   });
   infoWindow = new google.maps.InfoWindow();
 }
@@ -48,13 +48,20 @@ async function renderSearches(lon,lat) {
   })
   .then(data => data.json())
   .catch(err => console.error(err)); 
+  console.log(request);
   request.results.map(function(item, index) {
-    console.log(index, item.name);
-    $(".results").text(item, index.name);
-  
+    // console.log(index, item.name);
+    $(".results").append(`<p> ${index} , ${item.name} </p>`);
+    // console.log(item.geometry.location.lat, item.geometry.location.lng);
+    const marker = new google.maps.Marker({
+      position: {lat: item.geometry.location.lat, lng: item.geometry.location.lng}, 
+      label: `${index}`, 
+      zIndex: 1
     
-})
+    })
+    marker.setMap(map)
 
+})
 
 };
 
