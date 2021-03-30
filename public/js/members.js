@@ -51,7 +51,7 @@ async function renderSearches(lon,lat) {
   console.log(request);
   request.results.map(function(item, index) {
     // console.log(index, item.name);
-    $(".results").append(`<p> ${index} , ${item.name} </p>`);
+    $(".results").append(`<p> ${index}: ${item.name} Open: ${item.opening_hours.open_now} </p>`);
     // console.log(item.geometry.location.lat, item.geometry.location.lng);
     const marker = new google.maps.Marker({
       position: {lat: item.geometry.location.lat, lng: item.geometry.location.lng}, 
