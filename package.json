@@ -1,5 +1,4 @@
 {
-
   "name": "BrewTime",
   "version": "1.0.0",
   "description": "",
@@ -30,6 +29,11 @@
   "bugs": {
     "url": "https://github.com/jhohing/BrewTime/issues"
   },
-  "homepage": "https://github.com/jhohing/BrewTime#readme"
-
+  "homepage": "https://github.com/jhohing/BrewTime#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "mysql": "^2.18.1",
+    "orm": "^5.0.5"
+  }
 }
