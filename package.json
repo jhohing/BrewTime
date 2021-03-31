@@ -1,5 +1,4 @@
 {
-
   "name": "BrewTime",
   "version": "1.0.0",
   "description": "",
@@ -31,5 +30,4 @@
     "url": "https://github.com/jhohing/BrewTime/issues"
   },
   "homepage": "https://github.com/jhohing/BrewTime#readme"
-
 }

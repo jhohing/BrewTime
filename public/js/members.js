@@ -52,19 +52,20 @@ async function renderSearches(lon,lat) {
   // console.log(request.results[0].place_id);
   request.results.map(function(item, index) {
     // console.log(index, item.name);
-    $(".results").append("<ol>"); 
+    // $(".results").append("<ol>"); 
     let placeId = request.results[index].place_id;
-    getPlacesURL(placeId)
+    getPlacesURL(placeId, index)
     .then(placeURL => {
-      console.log(placeURL);
-      $(".results").append(`<li> <a href="${placeURL}" target="_blank"> ${item.name}</a> Open: ${item.opening_hours.open_now === true ? "Yes" : "No"} </li>`);
+      // console.log(placeURL);
+      // console.log(index);
+      $(".results").append(`<p> ${index} <a href="${placeURL}" target="_blank"> ${item.name}</a> Open: ${item.opening_hours.open_now === true ? "Yes" : "No"} </p>`);
     });
-    $(".results").append("</ol>"); 
+    // $(".results").append("</ol>"); 
     
     // console.log(item.geometry.location.lat, item.geometry.location.lng);
     const marker = new google.maps.Marker({
       position: {lat: item.geometry.location.lat, lng: item.geometry.location.lng}, 
-      label: `${placeURL}`
+      label: `${index}`
     })
     marker.setMap(map)
     
@@ -73,7 +74,7 @@ async function renderSearches(lon,lat) {
 
 };
 
-async function getPlacesURL(place_id) {
+async function getPlacesURL(place_id, placesIndex) {
     var apiKey = "AIzaSyBpP9c6UVQA5-hoA1VcR953lZwAsGfUUFg";
     var url = `https://maps.googleapis.com/maps/api/place/details/json?placeid=${place_id}&key=${apiKey}`;
     const request = await fetch(url, {
