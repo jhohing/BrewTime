@@ -40,14 +40,34 @@ img{
   from{border-right-color: rgba(255,255,255,.75);}
   to{border-right-color: transparent;}
 }
+
+h1{
+    color:brown;
+}
+p{
+    font-size: 20px;
+    color:maroon;
+}
 /* tabs */
 .nav-link{
     color:brown;
     font-size: 25px;
 }
 /* about page */
-.card{
+.about{
     margin:auto;
-    width: 18rem;
+    width: 30rem;
 }
 
+/* login css */
+.login{
+    width: 25%;   
+}
+
+.f1_label{
+    color:brown;
+}
+
+.submit{
+    margin-left:50px;
+}
