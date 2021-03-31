@@ -59,7 +59,11 @@ async function renderSearches(lon,lat) {
       // console.log(renderSearches);
       // console.log(index);
       $(".results").append(`<p> ${index} <a href="${placeURL}" target="_blank"> ${item.name}</a> Open: ${item.opening_hours.open_now === true ? "Yes" : "No"} </p>`);
+      let renderResults = request.results;
+      renderResults.sort((a, b) => Number(a.index) - Number(b.index));
+      console.log(renderResults)
     });
+
     // $(".results").append("</ol>"); 
     
     // console.log(item.geometry.location.lat, item.geometry.location.lng);
