@@ -48,7 +48,7 @@ async function renderSearches(lon,lat) {
   })
   .then(data => data.json())
   .catch(err => console.error(err)); 
-  // console.log(request);
+  console.log(request);
   // console.log(request.results[0].place_id);
   request.results.map(function(item, index) {
     // console.log(index, item.name);
@@ -56,7 +56,7 @@ async function renderSearches(lon,lat) {
     let placeId = request.results[index].place_id;
     getPlacesURL(placeId, index)
     .then(placeURL => {
-      // console.log(placeURL);
+      // console.log(renderSearches);
       // console.log(index);
       $(".results").append(`<p> ${index} <a href="${placeURL}" target="_blank"> ${item.name}</a> Open: ${item.opening_hours.open_now === true ? "Yes" : "No"} </p>`);
     });
