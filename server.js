@@ -21,6 +21,12 @@ app.use(session({ secret: "make this secret different for each project", resave:
 app.use(passport.initialize());
 app.use(passport.session());
 
+//Fixes any CORS policy related errors
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
