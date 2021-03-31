@@ -49,23 +49,48 @@ async function renderSearches(lon,lat) {
   .then(data => data.json())
   .catch(err => console.error(err)); 
   // console.log(request);
-  console.log(request.results[0].place_id);
+  // console.log(request.results[0].place_id);
   request.results.map(function(item, index) {
     // console.log(index, item.name);
-    $(".results").append(`<p> ${index}: ${item.name} Open: ${item.opening_hours.open_now === true ? "Yes" : "No"} </p>`);
+    $(".results").append("<ol>"); 
+    let placeId = request.results[index].place_id;
+    getPlacesURL(placeId)
+    .then(placeURL => {
+      console.log(placeURL);
+      $(".results").append(`<li> <a href="${placeURL}" target="_blank"> ${item.name}</a> Open: ${item.opening_hours.open_now === true ? "Yes" : "No"} </li>`);
+    });
+    $(".results").append("</ol>"); 
+    
     // console.log(item.geometry.location.lat, item.geometry.location.lng);
     const marker = new google.maps.Marker({
       position: {lat: item.geometry.location.lat, lng: item.geometry.location.lng}, 
-      label: `${index}`, 
-      // zIndex: 1
-    
+      label: `${placeURL}`
     })
     marker.setMap(map)
+    
 
 })
 
-
-
 };
+
+async function getPlacesURL(place_id) {
+    var apiKey = "AIzaSyBpP9c6UVQA5-hoA1VcR953lZwAsGfUUFg";
+    var url = `https://maps.googleapis.com/maps/api/place/details/json?placeid=${place_id}&key=${apiKey}`;
+    const request = await fetch(url, {
+      method: 'GET',
+      mode: 'cors', 
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(data => data.json())
+    .catch(err => console.error(err)); 
+    // console.log(request);
+    // console.log(request.result.website);
+    let pURL = request.result.website; 
+    return pURL; 
+
+
+}
 
 
