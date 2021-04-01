@@ -1,12 +1,9 @@
-{
-  "development": {
-    "username": "root",
-
-    "password": "rootroot",
-    "database": "Brewtime_db",
-
- 
-
+const config =  {
+  "development": 
+  {
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASS,
+    "database": process.env.DB_NAME,
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
@@ -25,3 +22,5 @@
     "dialect": "mysql"
   }
 }
+
+module.exports = config;

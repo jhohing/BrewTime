@@ -1,3 +1,5 @@
+//this application will use variable throughout the app. Local to your computer. App relies 
+//on those variables
 require("dotenv").config();
 
 // Requiring necessary npm packages
@@ -20,6 +22,12 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(session({ secret: "make this secret different for each project", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
