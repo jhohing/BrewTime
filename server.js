@@ -1,4 +1,6 @@
-// require("dotenv").config();
+//this application will use variable throughout the app. Local to your computer. App relies 
+//on those variables
+require("dotenv").config();
 
 // Requiring necessary npm packages
 var express = require("express");
