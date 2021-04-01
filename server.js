@@ -1,3 +1,5 @@
+//this application will use variable throughout the app. Local to your computer. App relies 
+//on those variables
 require("dotenv").config();
 
 // Requiring necessary npm packages
@@ -21,22 +23,17 @@ app.use(session({ secret: "make this secret different for each project", resave:
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Fixes any CORS policy related errors
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
+// //Fixes any CORS policy related errors
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   next();
+// });
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
-// Import routes and give the server access to them.
-var routes = require("./controllers/brewTime.js");
-
-app.use(routes);
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
