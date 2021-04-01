@@ -1,12 +1,8 @@
 {
   "development": {
-    "username": "root",
-
-    "password": "rootroot",
+    "username": "swoo328",
+    "password": "progery68",
     "database": "Brewtime_db",
-
- 
-
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
