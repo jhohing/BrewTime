@@ -1,45 +1,20 @@
-<!--Navbar-->
-<nav class="navbar navbar-light navbar-1 white">
-  <ul class="nav">
-    <!-- Links -->
-    <li class="nav-item">
-      <a class="nav-link" href="/">Home </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/about">About</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/login">Log In</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/maps">Maps</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/history">History</a>
-    </li>
-  </ul>
-</nav>
-<!--/.Navbar-->
+
 <div class="card login">
   <div class="card-body">
     <div id="login_form">
-      <form name="f1" method="post" action="login.php" id="f1">
-        <table>
-          <tr>
-            <td class="f1_label">User Name :</td>
-            <td><input type="text" name="username" value="" /></td>
-          </tr>
-          <tr>
-            <td class="f1_label">Password :</td>
-            <td><input type="password" name="password" value="" /></td>
-          </tr>
-          <tr>
-            <td>
-              <input type="submit" class = "submit" name="login" value="Log In" style="font-size: 18px" />
-            </td>
-          </tr>
-        </table>
-      </form>
+      <form class="login">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Login</button>
+        </form>
     </div>
   </div>
 </div>
+
+  <script type="text/javascript" src="/assets/js/login.js"></script>
