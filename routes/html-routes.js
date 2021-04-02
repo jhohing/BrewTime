@@ -4,16 +4,11 @@ var path = require("path");
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-var user;
-
 module.exports = function (app) {
 
 
   app.get("/", function (req, res) {
-    if (req.user) {
-      user = "T";
-    }
-    res.render("index", user);
+    res.render("index");
   });
   //get the login page
   app.get("/login", function (req, res) {
@@ -21,16 +16,10 @@ module.exports = function (app) {
   });
   //get the history page
   app.get("/history", function (req, res) {
-    if (req.user) {
-      user = "T";
-    }
     res.render("history");
   });
   //get the about page
   app.get("/about", function (req, res) {
-    if (req.user) {
-      user = "T";
-    }
     res.render("about");
   });
   //get the sign up page
@@ -43,11 +32,6 @@ module.exports = function (app) {
     if (!req.user) {
       res.redirect("/login");
     }
-    
-    if (req.user) {
-      user = "T";
-    }
-    
     // res.render("maps");
     return res.render("maps");
   });

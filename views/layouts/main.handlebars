@@ -24,7 +24,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/about">About</a>
             </li>
-            {{#if user}}
+            {{#if isAuthenticated}}
             <li class="nav-item">
                 <a class="nav-link" href="/logout">Log out</a>
             </li>
@@ -37,7 +37,7 @@
             </li>
             {{/if}}
             <li class="nav-item">
-                <a class="nav-link" href="/history">History</a>
+                <a class="nav-link" href="/members">Map</a>
             </li>
         </ul>
     </nav>
