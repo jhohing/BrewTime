@@ -20,7 +20,7 @@ module.exports = function (app) {
   });
   //get the about page
   app.get("/about", function (req, res) {
-      res.render("about");
+    res.render("about");
   });
   //get the sign up page
   app.get("/signup", function (req, res) {
