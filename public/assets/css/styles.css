@@ -1,0 +1,105 @@
+*{
+    font-family: Arial Black,Arial Bold,Gadget,sans-serif; 
+}
+h1{
+    text-align: center;
+}
+
+body{
+    background-image:url("/assets/coffee.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img{
+    margin:0 auto;
+    display:block;
+}
+
+/* Animation */
+.anim-typewriter{
+    position: relative;
+    top: 50%;  
+    width: 18em;
+    margin: 0 auto;
+    color:brown;
+    margin-top: 30px;
+    border-right: 2px solid rgba(255,255,255,.75);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);  
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 8em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+h1{
+    color:brown;
+}
+p{
+    font-size: 20px;
+    color:maroon;
+}
+/* tabs */
+.nav-link{
+    color:brown;
+    font-size: 25px;
+}
+
+a:hover{
+    background-color:white;
+}  
+
+/* about page */
+.about{
+    margin:auto;
+    width: 30rem;
+    border-radius: 16px;
+}
+.card-body{
+    background-color:lavender;
+}
+.about:hover{
+    -webkit-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+}
+/* maps */
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 50%;
+    /* The width is the width of the web page */
+    margin:auto;
+  }
+.result{
+    text-align: center;
+    margin:auto;
+    width:25%;
+    margin-top:50px;
+}
+
+h2{
+    color:brown;
+}
+
+/* login css */
+.login{
+    width: 25%;   
+}
+
+.f1_label{
+    color:brown;
+}
+
+.submit{
+    margin-left:50px;
+}
