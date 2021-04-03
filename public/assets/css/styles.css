@@ -53,17 +53,42 @@ p{
     color:brown;
     font-size: 25px;
 }
-/* line */
-.line{
-    width: 120px;
-    height: 3px;
-    background-color: black;
-}
+
+a:hover{
+    background-color:white;
+}  
 
 /* about page */
 .about{
     margin:auto;
     width: 30rem;
+    border-radius: 16px;
+}
+.card-body{
+    background-color:lavender;
+}
+.about:hover{
+    -webkit-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+}
+/* maps */
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 50%;
+    /* The width is the width of the web page */
+    margin:auto;
+  }
+.result{
+    text-align: center;
+    margin:auto;
+    width:25%;
+    margin-top:50px;
+}
+
+h2{
+    color:brown;
 }
 
 /* login css */
