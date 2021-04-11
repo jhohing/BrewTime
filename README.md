@@ -3,7 +3,7 @@
 # Description
 
 # Screenshot 
-![](public/assets/brew.png)
+![]public/assets/brew.PNG)
  
 # Repository/Github Live
 https://github.com/jhohing/BrewTime
